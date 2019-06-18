@@ -20,11 +20,13 @@ app.get('/', (req, res) => {
       // Get a reply from API.AI
   
       let apiaiReq = apiai.textRequest(text, {
-        sessionId: proccess.env.APIAI_SESSION_ID
+        sessionId: process.env.APIAI_SESSION_ID
       });
   
       apiaiReq.on('response', (response) => {
         let aiText = response.result.fulfillment.speech;
+        console.log(aiText,"==================================");
+        
         socket.emit('bot reply', aiText); // Send the result back to the browser!
       });
   
