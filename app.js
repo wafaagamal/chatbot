@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
       // Get a reply from API.AI
   
       let apiaiReq = apiai.textRequest(text, {
-        sessionId: APIAI_SESSION_ID
+        sessionId: proccess.env.APIAI_SESSION_ID
       });
   
       apiaiReq.on('response', (response) => {
