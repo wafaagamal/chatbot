@@ -1,7 +1,7 @@
 const socket = io();
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
-const socket = io();
+
 
 recognition.lang = 'en-US';
 recognition.interimResults = false;
